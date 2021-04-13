@@ -11,3 +11,5 @@ INSERT INTO tb_user_roles(user_id, roles_id) VALUES (2, 2);
 INSERT INTO tb_genre(name) VALUES ('Aventura');
 INSERT INTO tb_genre(name) VALUES ('Ação');
 INSERT INTO tb_genre(name) VALUES ('Terror');
+
+INSERT INTO tb_movie(title, sub_title, ano, img_url, synopsis) VALUES ('2012', 'A extinção', 2009, 'https://upload.wikimedia.org/wikipedia/pt/thumb/d/dd/2012_Poster.jpg/250px-2012_Poster.jpg', 'Bilhões de habitantes da Terra não estão cientes de que o planeta tem uma data de expiração. Com os avisos de um cientista norte-americano, os líderes mundiais começam os preparativos secretos para a sobrevivência de alguns membros da sociedade. Quando o cataclisma global finalmente ocorre, o fracassado escritor Jackson Curtis tenta levar sua família para um lugar seguro quando o mundo começa a desmoronar.')
