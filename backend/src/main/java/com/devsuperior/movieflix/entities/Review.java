@@ -1,39 +1,45 @@
 package com.devsuperior.movieflix.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tb_genre")
-public class Genre implements Serializable{
+@Table(name = "tb_review")
+public class Review implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
 	
-	@OneToMany(mappedBy = "genre")
-	private List<Movie> movies = new ArrayList<>();
+	@Column(columnDefinition="TEXT")
+	private String text;
 	
-	public Genre() {
+	@ManyToOne
+	@JoinColumn(name = "movie_id")
+	private Movie movie;
+	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User user;
+	
+	public Review() {
 		
 	}
 
 
-	public Genre(Long id, String name) {
-		super();
+	public Review(Long id, String text) {
 		this.id = id;
-		this.name = name;
+		this.text = text;
 	}
 
 
@@ -47,17 +53,27 @@ public class Genre implements Serializable{
 	}
 
 
-	public String getName() {
-		return name;
+	public String getText() {
+		return text;
 	}
 
 
-	public void setName(String name) {
-		this.name = name;
+	public void setText(String text) {
+		this.text = text;
+	}
+	
+
+	public Movie getMovie() {
+		return movie;
 	}
 
-	public List<Movie> getMovies() {
-		return movies;
+
+	public void setMovie(Movie movie) {
+		this.movie = movie;
+	}
+	
+	public User getUser() {
+		return user;
 	}
 
 
@@ -78,7 +94,7 @@ public class Genre implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Genre other = (Genre) obj;
+		Review other = (Review) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -86,6 +102,7 @@ public class Genre implements Serializable{
 			return false;
 		return true;
 	}
+	
 	
 	
 }
