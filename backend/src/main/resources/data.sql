@@ -12,6 +12,8 @@ INSERT INTO tb_genre(name) VALUES ('Aventura');
 INSERT INTO tb_genre(name) VALUES ('Ação');
 INSERT INTO tb_genre(name) VALUES ('Terror');
 
+
+INSERT INTO tb_movie(title, sub_title, ano, img_url, synopsis, genre_id) VALUES ('Eu sou a lenda', 'Os zumbies', 2007, 'https://s1.static.brasilescola.uol.com.br/be/conteudo/images/o-filme-eu-sou-lenda-pode-ser-usado-nas-aulas-biologia-por-abordar-temas-como-doencas-virais-imunizacao-5bcf030bce2eb.jpg', 'Robert Neville é um brilhante cientista e o único sobrevivente de uma epidemia que transformou os humanos em mutantes sedentos por sangue. Andando pela cidade de Nova York, ele procura por outros possíveis sobreviventes e tenta achar a cura da praga usando seu próprio sangue, que é imune.',1);
 INSERT INTO tb_movie(title, sub_title, ano, img_url, synopsis, genre_id) VALUES ('2012', 'A extinção', 2009, 'https://upload.wikimedia.org/wikipedia/pt/thumb/d/dd/2012_Poster.jpg/250px-2012_Poster.jpg', 'Bilhões de habitantes da Terra não estão cientes de que o planeta tem uma data de expiração. Com os avisos de um cientista norte-americano, os líderes mundiais começam os preparativos secretos para a sobrevivência de alguns membros da sociedade. Quando o cataclisma global finalmente ocorre, o fracassado escritor Jackson Curtis tenta levar sua família para um lugar seguro quando o mundo começa a desmoronar.',2);
 
 INSERT INTO tb_review(text, movie_id, user_id) VALUES ('O filme é muito bom, com efeitos especiais fantasticos para a epoca!!', 1, 2);
